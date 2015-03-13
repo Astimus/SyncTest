@@ -1,0 +1,102 @@
+﻿@using ChartTheme = Syncfusion.JavaScript.DataVisualization.ChartTheme
+@{
+    ViewBag.Title = "Chart";
+    ViewData["ProductName"] = "Chart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Chart Features:</h2><br />
+<li> Chart Types - Bar Chart</li>
+<li> Zooming</li>
+<li> Tooltip</li>
+<li> CrossHair</li>
+<li> Theme - Default-theme</li>
+<br />
+<h2>Chart</h2><br />
+<div>
+    @(Html.EJ().Chart("container")
+          .PrimaryXAxis(pr => pr.Title(tl => tl.Text("Отчет")).CrosshairLabel(seAxes => seAxes.Visible(true)).Range(ra => ra.Min(2011).Max(2014).Interval(1)).LabelRotation(45))
+          .PrimaryYAxis(pr => pr.Range(ra => ra.Max(60000).Min(0).Interval(10000)).Font((fn => fn.Size("15px").FontFamily("Segoe UI"))))
+          .CommonSeriesOptions(cr => cr.Type(SeriesType.Bar).EnableAnimation(true).Tooltip(sr1 => sr1.Visible(true).Format("#series.name# <br/> #point.x# : #point.y#")))
+          .Series(sr =>
+          {
+              sr.Points(pt =>
+              {
+                  pt.X("2012").Y(10000).Add();
+                  pt.X("2013").Y(50000).Add();
+              }).Name("Атырауская область").Add();
+
+              sr.Points(pt =>
+              {
+                  pt.X("2012").Y(10500).Add();
+                  pt.X("2013").Y(45000).Add();
+              }).Name("Актюбинская область ").Add();
+
+              sr.Points(pt =>
+              {
+                  pt.X("2012").Y(9700).Add();
+                  pt.X("2013").Y(35000).Add();
+              }).Name("Алмаатинская область").Add();
+              
+              //---------------------------------------------------
+              sr.Points(pt =>
+              {
+                  pt.X("2012").Y(10000).Add();
+                  pt.X("2013").Y(20000).Add();
+              }).Name("Область 2").Add();
+              sr.Points(pt =>
+              {
+                  pt.X("2012").Y(15000).Add();
+                  pt.X("2013").Y(25000).Add();
+              }).Name("Область 3").Add();
+              sr.Points(pt =>
+              {
+                  pt.X("2012").Y(6000).Add();
+                  pt.X("2013").Y(60000).Add();
+              }).Name("Область 4").Add();
+              sr.Points(pt =>
+              {
+                  pt.X("2012").Y(17000).Add();
+                  pt.X("2013").Y(37000).Add();
+              }).Name("Область 5").Add();
+              sr.Points(pt =>
+              {
+                  pt.X("2012").Y(19000).Add();
+                  pt.X("2013").Y(29000).Add();
+              }).Name("Область 6").Add();
+              sr.Points(pt =>
+              {
+                  pt.X("2012").Y(39000).Add();
+                  pt.X("2013").Y(35000).Add();
+              }).Name("Область 7").Add();
+              sr.Points(pt =>
+              {
+                  pt.X("2012").Y(17000).Add();
+                  pt.X("2013").Y(38000).Add();
+              }).Name("Область 8").Add();
+              sr.Points(pt =>
+              {
+                  pt.X("2012").Y(13000).Add();
+                  pt.X("2013").Y(15000).Add();
+              }).Name("Область 9").Add();
+              sr.Points(pt =>
+              {
+                  pt.X("2012").Y(36000).Add();
+                  pt.X("2013").Y(18000).Add();
+              }).Name("Область 10").Add();
+              
+          })
+          .Load("loadTheme")
+                          //.Axes(ax =>
+                          //        {
+                          //            ax.MajorGridLines(mj => mj.Visible(false)).CrosshairLabel(chAxes => chAxes.Visible(true)).Orientation("Horizontal").Name("xAxis1").ValueType(AxisValueType.Datetime).LabelRotation(90).Add();
+                          //            ax.MajorGridLines(mj => mj.Visible(false)).LabelFormat("{value}mm").CrosshairLabel(seAxes => seAxes.Visible(true)).Orientation("Vertical").OpposedPosition(true).Range(rg => rg.Min(0).Max(150).Interval(20)).Name("yAxis").Add();
+                          //        })
+          .Crosshair(cr => cr.Visible(true).Type(CrosshairType.Crosshair))
+          //.Zooming(zn=>zn.Enable(true).EnableMouseWheel(true))
+          .CanResize(true)
+          .Title(t => t.Text("Грузооборот, млн. тонно-километров"))
+          .Size(sz => sz.Height("600"))
+          .Legend(lg => lg.Visible(true).Position(LegendPosition.Left).Alignment(Syncfusion.JavaScript.DataVisualization.TextAlignment.Near))
+          //.Theme(ChartTheme.Saffron)
+          )
+</div>
