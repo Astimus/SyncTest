@@ -55,3 +55,4 @@ C:\Users\Астемир\Documents\Syncfusion MVC\Projects\MvcApplication4\bin\Sy
 C:\Users\Астемир\Documents\Syncfusion MVC\Projects\MvcApplication4\bin\System.Web.Http.WebHost.xml
 C:\Users\Астемир\Documents\Syncfusion MVC\Projects\MvcApplication4\obj\Debug\MvcApplication4.dll
 C:\Users\Астемир\Documents\Syncfusion MVC\Projects\MvcApplication4\obj\Debug\MvcApplication4.pdb
+C:\Users\Астемир\Documents\Syncfusion MVC\Projects\MvcApplication4\obj\Debug\SyncfusionTest.csprojResolveAssemblyReference.cache

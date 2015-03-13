@@ -86,11 +86,11 @@
               
           })
           .Load("loadTheme")
-                          //.Axes(ax =>
-                          //        {
-                          //            ax.MajorGridLines(mj => mj.Visible(false)).CrosshairLabel(chAxes => chAxes.Visible(true)).Orientation("Horizontal").Name("xAxis1").ValueType(AxisValueType.Datetime).LabelRotation(90).Add();
-                          //            ax.MajorGridLines(mj => mj.Visible(false)).LabelFormat("{value}mm").CrosshairLabel(seAxes => seAxes.Visible(true)).Orientation("Vertical").OpposedPosition(true).Range(rg => rg.Min(0).Max(150).Interval(20)).Name("yAxis").Add();
-                          //        })
+                                  .Axes(ax =>
+                                          {
+                                              ax.MajorGridLines(mj => mj.Visible(false)).CrosshairLabel(chAxes => chAxes.Visible(true)).Orientation("Horizontal").Name("xAxis1").ValueType(AxisValueType.Datetime).LabelRotation(90).Add();
+                                              ax.MajorGridLines(mj => mj.Visible(false)).LabelFormat("{value}mm").CrosshairLabel(seAxes => seAxes.Visible(true)).Orientation("Vertical").OpposedPosition(true).Range(rg => rg.Min(0).Max(150).Interval(20)).Name("yAxis").Add();
+                                          })
           .Crosshair(cr => cr.Visible(true).Type(CrosshairType.Crosshair))
           //.Zooming(zn=>zn.Enable(true).EnableMouseWheel(true))
           .CanResize(true)
